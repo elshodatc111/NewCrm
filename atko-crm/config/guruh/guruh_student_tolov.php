@@ -26,7 +26,7 @@
         $sql33 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
         VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
         $stmt33= $conn->prepare($sql33);
-        $stmt33->execute([$UserID,$GuruhID,$Typing,$TulovType." ".$GuruhName,$TulovSumma,$Username]);
+        $stmt33->execute([$UserID,$GuruhID,$Typing,$TulovType,$TulovSumma,$Username]);
 
         $sql1 = "INSERT INTO `user_student_tulov`(`id`, `UserID`, `TulovType`, `TulovSumma`, `Izoh`, `MenegerID`, `InsertData`, `UpateData`) 
         VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";

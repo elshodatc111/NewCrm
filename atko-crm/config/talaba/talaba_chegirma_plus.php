@@ -21,7 +21,7 @@
         $sqlg = "SELECT * FROM `guruh` WHERE `GuruhID`='".$GuruhID."'";
         $resg = $conn->query($sqlg);
         $rowg = $resg->fetch();
-        $Guruh_Name = $rowg['GuruhName'];
+        $Guruh_Name = "Chegirma";
         echo $Guruh_Name;
         $sqlhis = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`) 
         VALUES (NULL,?,?,'Guruhga_Chegirma',?,?,CURRENT_TIMESTAMP,?)";

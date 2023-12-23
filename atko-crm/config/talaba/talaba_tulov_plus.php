@@ -43,7 +43,7 @@
             echo "Mavjud";
         }else{
             if($GuruhID==='NULL'){
-                $GuruhName = $tulovType." NULL"; //Guruh nomi
+                $GuruhName = $tulovType; //Guruh nomi
                 $Typing = "Guruhga_tulov";
                 // Talaba tarixiga yozish
                 $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
@@ -75,7 +75,7 @@
                     $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
                     VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
                     $stmt2= $conn->prepare($sql2);
-                    $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType." ".$GuruhName,$summa,$Username]);
+                    $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType,$summa,$Username]);
                     // Talaba to'lovlarini yozish
                     $sql3 = "INSERT INTO `user_student_tulov`(`id`, `UserID`, `TulovType`, `TulovSumma`, `Izoh`, `MenegerID`, `InsertData`, `UpateData`) 
                     VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
@@ -92,7 +92,7 @@
                     $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
                     VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
                     $stmt2= $conn->prepare($sql2);
-                    $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType." ".$GuruhName,$summa,$Username]);
+                    $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType,$summa,$Username]);
                     // Talaba to'lovlarini yozish
                     $sql3 = "INSERT INTO `user_student_tulov`(`id`, `UserID`, `TulovType`, `TulovSumma`, `Izoh`, `MenegerID`, `InsertData`, `UpateData`) 
                     VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
@@ -117,7 +117,7 @@
                         $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
                         VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
                         $stmt2= $conn->prepare($sql2);
-                        $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType." ".$GuruhName,$summa,$Username]);
+                        $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType,$summa,$Username]);
                         // Talaba to'lovlarini yozish
                         $sql3 = "INSERT INTO `user_student_tulov`(`id`, `UserID`, `TulovType`, `TulovSumma`, `Izoh`, `MenegerID`, `InsertData`, `UpateData`) 
                         VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
@@ -133,7 +133,7 @@
                         $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
                         VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
                         $stmt2= $conn->prepare($sql2);
-                        $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType." ".$GuruhName,$summa,$Username]);
+                        $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType,$summa,$Username]);
                         $sql223 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
                         VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
                         $stmt223= $conn->prepare($sql223);
@@ -159,7 +159,7 @@
                     $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
                     VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,?)";
                     $stmt2= $conn->prepare($sql2);
-                    $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType." ".$GuruhName,$summa,$Username]);
+                    $stmt2->execute([$UserID, $GuruhID,$Typing,$tulovType,$summa,$Username]);
                     // Talaba to'lovlarini yozish
                     $sql3 = "INSERT INTO `user_student_tulov`(`id`, `UserID`, `TulovType`, `TulovSumma`, `Izoh`, `MenegerID`, `InsertData`, `UpateData`) 
                     VALUES (NULL,?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
