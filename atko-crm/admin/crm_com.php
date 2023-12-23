@@ -1,6 +1,6 @@
 <?php
     include("../config/config.php");
-    $API_KEY = "cae80e974e29424f355b74970b12b05d";
+    include("./lest.php");
     $Password = md5($_POST['password']);
     if(isset($_POST['commit'])){
         if($Password === $API_KEY){
