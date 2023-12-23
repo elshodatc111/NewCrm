@@ -1,8 +1,8 @@
 <?php
     date_default_timezone_set("Asia/Samarkand");
-    $servername = "localhost:3306";
-    $username = "my_atko_crm";
-    $password = "Elshod1997/*";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
     $dbname = "atko_crm";
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

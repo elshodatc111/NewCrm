@@ -370,32 +370,60 @@
                 <div class="info-box card" style="min-height:270px;">
                     <i class="bi bi-geo-alt"></i>
                     <h5 style="font-size:18px;" class="py-2">Mavjud summa</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($mavjudNaqt, 0, '.', ' '); ?> so'm</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($mavjudPlastik, 0, '.', ' '); ?> so'm</h5>
+                    <?php if($mavjudNaqt>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($mavjudNaqt, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($mavjudNaqt, 0, '.', ' '); ?> so'm</h5>
+                    <?php } if($mavjudPlastik>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($mavjudPlastik, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($mavjudPlastik, 0, '.', ' '); ?> so'm</h5>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-lg-3 col-12">
                 <div class="info-box card" style="min-height:270px;">
                     <i class="bi bi-clock-history"></i>
                     <h5 style="font-size:18px;" class="py-2">Chiqimlar kutilmoqda</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($chiqimNaqtKutilmoqda, 0, '.', ' '); ?> so'm</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($chiqimPlastikKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php if($chiqimNaqtKutilmoqda>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($chiqimNaqtKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($chiqimNaqtKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php } if($chiqimPlastikKutilmoqda>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($chiqimPlastikKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($chiqimPlastikKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-lg-3 col-12">
                 <div class="info-box card" style="min-height:270px;">
                     <i class="bi bi-clock-history"></i>
                     <h5 style="font-size:18px;" class="py-2">Xarajatlar kutilmoqda</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($xarajatNaqtKutilmoqda, 0, '.', ' '); ?> so'm</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b> <?php echo number_format($xarajatPlastikKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php if($xarajatNaqtKutilmoqda>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($xarajatNaqtKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($xarajatNaqtKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php } if($xarajatPlastikKutilmoqda>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($xarajatPlastikKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($xarajatPlastikKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-lg-3 col-12">
                 <div class="info-box card" style="min-height:270px;">
                     <i class="bi bi-clock-history"></i>
                     <h5 style="font-size:18px;" class="py-2">To'lov qaytarish kutilmoqda</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($NaqtQaytarKutmoqda, 0, '.', ' '); ?> so'm</h5>
-                    <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($PlastikQaytarKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php if($NaqtQaytarKutmoqda>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($NaqtQaytarKutmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">NAQT: </b> <?php echo number_format($NaqtQaytarKutmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php } if($PlastikQaytarKutilmoqda>0){ ?>
+                        <h5 style="color:red;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($PlastikQaytarKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php }else{ ?>
+                        <h5 style="color:green;font-weight:700;"><b style="color:blue;">PLASTIK: </b><?php echo number_format($PlastikQaytarKutilmoqda, 0, '.', ' '); ?> so'm</h5>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -406,7 +434,7 @@
                 <!-- Tasdiqlanmagan chiqimlar -->
                 <div class="accordion-item pt-3">
                     <h6 class="accordion-header"><button class="accordion-button collapsed" style="font-weight:700;" data-bs-target="#faqsThree-1" type="button" data-bs-toggle="collapse">TASDIQLANMAGAN CHIQIMLAR</button></h6>
-                    <div id="faqsThree-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-3">
+                    <div id="faqsThree-1" class="accordion-collapse collapse show" data-bs-parent="#faq-group-3">
                         <div class="accordion-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered text-center align-baseline table-striped" width="100%" cellspacing="0">
