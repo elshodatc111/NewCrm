@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Дек 23 2023 г., 19:49
+-- Время создания: Дек 23 2023 г., 20:49
 -- Версия сервера: 10.3.39-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -9444,7 +9444,10 @@ INSERT INTO `guruh_davomad` (`id`, `UserID`, `GuruhID`, `Date`) VALUES
 (9645, '1701703619', '1701523533', '2023-12-23'),
 (9646, '1701787566', '1701523533', '2023-12-23'),
 (9647, '1701945506', '1701523533', '2023-12-23'),
-(9648, '1694577187', '1701523533', '2023-12-23');
+(9648, '1694577187', '1701523533', '2023-12-23'),
+(9649, '1696427800', '1702118861', '2023-12-23'),
+(9650, '1697294980', '1702118861', '2023-12-23'),
+(9651, '1696949858', '1702118861', '2023-12-23');
 
 -- --------------------------------------------------------
 
@@ -11253,7 +11256,8 @@ INSERT INTO `guruh_plus` (`id`, `GuruhID`, `UserID`, `Start`, `StartIzoh`, `Star
 (2892, '1703341962', '1701175324', '2023-12-23 14:32:42', 'Talaba Yangi guruhga qo\'shildi', '1696835373', '0000-00-00 00:00:00', 'NULL', 'NULL', 'true'),
 (2893, '1703341962', '1701175816', '2023-12-23 14:32:42', 'Talaba Yangi guruhga qo\'shildi', '1696835373', '0000-00-00 00:00:00', 'NULL', 'NULL', 'true'),
 (2894, '1703341962', '1701348868', '2023-12-23 14:32:42', 'Talaba Yangi guruhga qo\'shildi', '1696835373', '0000-00-00 00:00:00', 'NULL', 'NULL', 'true'),
-(2895, '1703341962', '1701350247', '2023-12-23 14:32:42', 'Talaba Yangi guruhga qo\'shildi', '1696835373', '0000-00-00 00:00:00', 'NULL', 'NULL', 'true');
+(2895, '1703341962', '1701350247', '2023-12-23 14:32:42', 'Talaba Yangi guruhga qo\'shildi', '1696835373', '0000-00-00 00:00:00', 'NULL', 'NULL', 'true'),
+(2896, '1702995106', '1703343511', '2023-12-23 14:59:06', 'qush', '1696835373', '0000-00-00 00:00:00', 'NULL', 'NULL', 'true');
 
 -- --------------------------------------------------------
 
@@ -12319,7 +12323,9 @@ INSERT INTO `sms` (`id`, `Phone`, `Text`, `Markaz`, `Dates`) VALUES
 (636, '912171758', 'TESHAYEV QUVONCHBEK \nHisobingizga 300000 so\'m to\'lov qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101', 'ATKO', '2023-12-23 10:57:50'),
 (637, '918128480', 'HOSHIMOV QUVONCHBEK \nHisobingizga 80000 so\'m to\'lov va 50000 so\'m chegirma qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101', 'ATKO', '2023-12-23 10:59:47'),
 (638, '973133523', 'QULDOSHOV DONIYOR \nHisobingizga 50000 so\'m to\'lov va 50000 so\'m chegirma qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101', 'ATKO', '2023-12-23 14:33:56'),
-(639, '907335264', 'ALIYEV AZIZBEK \nHisobingizga 350000 so\'m to\'lov va 50000 so\'m chegirma qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101', 'ATKO', '2023-12-23 14:35:08');
+(639, '907335264', 'ALIYEV AZIZBEK \nHisobingizga 350000 so\'m to\'lov va 50000 so\'m chegirma qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101', 'ATKO', '2023-12-23 14:35:08'),
+(640, '908805539', 'ARABOV OG`ABEK 2023 yil Dec-23 kunida ATKO koreys tili o\'quv markazida o\'qish uchun ro\'yhatga olindi.\nMa\'lumot uchun: (91) 950 1101', 'ATKO', '2023-12-23 14:58:31'),
+(641, '900000000', 'TEST UCHUN 2023 yil Dec-23 kunida ATKO koreys tili o\'quv markazida o\'qish uchun ro\'yhatga olindi.\nMa\'lumot uchun: (91) 950 1101', 'ATKO', '2023-12-23 15:48:44');
 
 -- --------------------------------------------------------
 
@@ -13176,7 +13182,9 @@ INSERT INTO `users` (`id`, `UserID`, `FIO`, `Phone`, `Manzil`, `TKun`, `Type`, `
 (2158, '1703005072', 'KARIMOV SHOKIR', '998 88 428 2552', 'Qarshi shahar', '2001-04-16', 'student', 'student', 'student', '2023-12-19 16:57:52', '2023-12-19 16:57:52'),
 (2159, '1703169716', 'BOTIROV HASAN', '998 91 633 4262', 'Qarshi tumani', '1997-03-27', 'student', 'student', 'student', '2023-12-21 14:41:56', '2023-12-21 14:41:56'),
 (2160, '1703247817', 'ILHOMOV IBROHIM', '998 91 637 2724', 'Koson tumani', '2000-05-07', 'student', 'student', 'student', '2023-12-22 12:23:37', '2023-12-22 12:23:37'),
-(2161, '1703257161', 'JURAYEV OG\"ABEK', '998 97 200 5675', 'Qarshi shahar', '2005-08-03', 'student', 'student', 'student', '2023-12-22 14:59:21', '2023-12-22 14:59:21');
+(2161, '1703257161', 'JURAYEV OG\"ABEK', '998 97 200 5675', 'Qarshi shahar', '2005-08-03', 'student', 'student', 'student', '2023-12-22 14:59:21', '2023-12-22 14:59:21'),
+(2162, '1703343511', 'ARABOV OG`ABEK', '998 90 880 5539', 'Qarshi shahar', '2005-08-17', 'student', 'student', 'student', '2023-12-23 14:58:31', '2023-12-23 14:58:31'),
+(2163, '1703346524', 'TEST UCHUN', '998 90 000 0000', 'Chiroqchi tumani', '2023-01-01', 'student', 'student', 'student', '2023-12-23 15:48:44', '2023-12-23 15:48:44');
 
 -- --------------------------------------------------------
 
@@ -14597,7 +14605,29 @@ INSERT INTO `user_history` (`id`, `UserID`, `AdminID`, `Izoh`, `Data`) VALUES
 (1098, '1701175816', '1696835373', 'Yangi guruhga qo`shildi', '2023-12-23 14:32:42'),
 (1099, '1701348868', '1696835373', 'Yangi guruhga qo`shildi', '2023-12-23 14:32:42'),
 (1100, '1701350247', '1696835373', 'Yangi guruhga qo`shildi', '2023-12-23 14:32:42'),
-(1101, 'Chiqim', '1696835373', '100000 Naqt to`lov talabaga qaytarildi', '2023-12-23 14:40:04');
+(1101, 'Chiqim', '1696835373', '100000 Naqt to`lov talabaga qaytarildi', '2023-12-23 14:40:04'),
+(1102, '1703343511', '1696835373', 'ARABOV OG`ABEK yangi talab qo`shildi', '2023-12-23 14:58:31'),
+(1103, '1703343511', '1696835373', 'Talaba guruhga qo\'shdi', '2023-12-23 14:59:06'),
+(1104, '1703346524', '1689004931', 'TEST UCHUN yangi talab qo`shildi', '2023-12-23 15:48:44');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user_meneger`
+--
+
+CREATE TABLE `user_meneger` (
+  `id` int(11) NOT NULL,
+  `UserID` varchar(20) NOT NULL,
+  `MenegerID` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Дамп данных таблицы `user_meneger`
+--
+
+INSERT INTO `user_meneger` (`id`, `UserID`, `MenegerID`) VALUES
+(1, '1703346524', '1689004931');
 
 -- --------------------------------------------------------
 
@@ -15436,7 +15466,9 @@ INSERT INTO `user_student` (`id`, `UserID`, `Tanish`, `TanishPhone`, `About`, `H
 (1472, '1703005072', 'uy', '998 99 335 1353', 'ish', 'Tanishlar'),
 (1473, '1703169716', 'uy', '998 91 562 5291', 'ish', 'Bannerlar'),
 (1474, '1703247817', 'uy', '998 91 562 6261', 'Ishga', 'Tanishlar'),
-(1475, '1703257161', 'uy', '998 88 220 9959', 'ish', 'Tanishlar');
+(1475, '1703257161', 'uy', '998 88 220 9959', 'ish', 'Tanishlar'),
+(1476, '1703343511', 'uy', '998 33 143 9151', 'ish', 'Tanishlar'),
+(1477, '1703346524', 'Test', '998 90 000 0000', 'Test uchun', 'Telegram');
 
 -- --------------------------------------------------------
 
@@ -20177,7 +20209,8 @@ INSERT INTO `user_student_history` (`id`, `UserID`, `GuruhID`, `Type`, `Status`,
 (6130, '1701348868', '1703341962', 'Guruhga_tulov', 'Plastik ASILBEK A1 JUFT 18.00', '50000', '2023-12-23 14:33:56', 'R.Laziz'),
 (6131, '1701348868', '1703341962', 'Guruhga_Chegirma', 'ASILBEK A1 JUFT 18.00', '50000', '2023-12-23 14:33:56', 'R.Laziz'),
 (6132, '1701175816', '1703341962', 'Guruhga_tulov', 'Naqt ASILBEK A1 JUFT 18.00', '350000', '2023-12-23 14:35:08', 'R.Laziz'),
-(6133, '1701175816', '1703341962', 'Guruhga_Chegirma', 'ASILBEK A1 JUFT 18.00', '50000', '2023-12-23 14:35:08', 'R.Laziz');
+(6133, '1701175816', '1703341962', 'Guruhga_Chegirma', 'ASILBEK A1 JUFT 18.00', '50000', '2023-12-23 14:35:08', 'R.Laziz'),
+(6134, '1703343511', '1702995106', 'Guruhga_qoshildi', 'KAMRON HANGEL JUFT 20.00', '400000', '2023-12-23 14:59:06', 'R.Laziz');
 
 -- --------------------------------------------------------
 
@@ -23446,6 +23479,12 @@ ALTER TABLE `user_history`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user_meneger`
+--
+ALTER TABLE `user_meneger`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `user_student`
 --
 ALTER TABLE `user_student`
@@ -23513,13 +23552,13 @@ ALTER TABLE `guruh_chegirma`
 -- AUTO_INCREMENT для таблицы `guruh_davomad`
 --
 ALTER TABLE `guruh_davomad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9649;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9652;
 
 --
 -- AUTO_INCREMENT для таблицы `guruh_plus`
 --
 ALTER TABLE `guruh_plus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2896;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2897;
 
 --
 -- AUTO_INCREMENT для таблицы `guruh_user_del`
@@ -23549,13 +23588,13 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT для таблицы `sms`
 --
 ALTER TABLE `sms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=640;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=642;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2162;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2164;
 
 --
 -- AUTO_INCREMENT для таблицы `user_admin`
@@ -23579,19 +23618,25 @@ ALTER TABLE `user_admin_tulov`
 -- AUTO_INCREMENT для таблицы `user_history`
 --
 ALTER TABLE `user_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1105;
+
+--
+-- AUTO_INCREMENT для таблицы `user_meneger`
+--
+ALTER TABLE `user_meneger`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `user_student`
 --
 ALTER TABLE `user_student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1476;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1478;
 
 --
 -- AUTO_INCREMENT для таблицы `user_student_history`
 --
 ALTER TABLE `user_student_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6134;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6135;
 
 --
 -- AUTO_INCREMENT для таблицы `user_student_tulov`

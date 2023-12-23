@@ -12,9 +12,8 @@
         $TKun = $_POST['TKun'];
         $Haqimizda = str_replace("'","`",$_POST['Haqimizda']);
         $TashrifHaqida = str_replace("'","`",$_POST['TashrifHaqida']);
-        echo $_POST['TashrifHaqida'];
         $UserID = time();
-        
+
         $sql22 = "SELECT * FROM `users` WHERE `FIO`='".$FIO."' AND `TKun`='".$TKun."' AND `Type`='student'";
         $res22 = $conn->query($sql22);
         $count = $res22->fetchColumn();
@@ -55,6 +54,10 @@
             $sql1 = "INSERT INTO `user_student`(`id`, `UserID`, `Tanish`, `TanishPhone`, `About`, `Haqimizda`) VALUES (NULL,?,?,?,?,?)";
             $stmt1= $conn->prepare($sql1);
             $stmt1->execute([$UserID,$Tanish,$TanishPhone,$TashrifHaqida,$Haqimizda]);
+
+            $sql11 = "INSERT INTO `user_meneger`(`id`, `UserID`, `MenegerID`) VALUES (NULL,?,?)";
+            $stmt11= $conn->prepare($sql11);
+            $stmt11->execute([$UserID,$_COOKIE['UserID']]);
 
             $sql2 = "INSERT INTO `user_history`(`id`, `UserID`, `AdminID`, `Izoh`, `Data`) VALUES (NULL,?,?,?,CURRENT_TIMESTAMP)";
             $stmt2= $conn->prepare($sql2);

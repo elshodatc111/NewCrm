@@ -122,6 +122,7 @@
                   <th>Telefon</th>
                   <th>About</th>
                   <th>Haqimizda</th>
+                  <th>Meneger</th>
                 </tr>
               </thead>
               <tbody>
@@ -130,6 +131,17 @@
                   $resTashrif = $conn->query($sqlTashrif);
                   $i=1;
                   while ($row=$resTashrif->fetch()) {
+                    $sql77 = "SELECT * FROM `user_meneger` JOIN `users` ON user_meneger.MenegerID=users.UserID WHERE user_meneger.UserID='".$row['UserID']."'";
+                    $result = $conn->query($sql77); 
+                    $number_of_rows = $result->fetchColumn(); 
+                    if($number_of_rows>0){
+                      $sql77w = "SELECT * FROM `user_meneger` JOIN `users` ON user_meneger.MenegerID=users.UserID WHERE user_meneger.UserID='".$row['UserID']."'";
+                      $result = $conn->query($sql77w); 
+                      $row77w = $result->fetch();
+                      $Men = $row77w['Username'];
+                    }else{
+                      $Men = " ";
+                    }
                     echo "<tr>
                     <td>".$i."</td>
                     <td>".$row['UserID']."</td>
@@ -142,6 +154,7 @@
                     <td>".$row['TanishPhone']."</td>
                     <td>".$row['About']."</td>
                     <td>".$row['Haqimizda']."</td>
+                    <td>".$Men."</td>
                   </tr>";
                   $i++;
                   }
