@@ -560,7 +560,7 @@
                                                 }
                                                 echo "<tr>
                                                     <td>".$i."</td>
-                                                    <td>".$rowqt['FIO']."</td>
+                                                    <td><a href='./blog/tashrif_eye.php?UserID=".$rowqt['UserID']."'>".$rowqt['FIO']."</a></td>
                                                     <td>".$row['TulovTuri']."</td>
                                                     <td>".number_format(($row['TulovSumma']), 0, '.', ' ')." so`m</td>
                                                     <td>".$row['QaytarishVaqti']."</td>
