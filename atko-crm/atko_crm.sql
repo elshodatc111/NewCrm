@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost:3306
--- Время создания: Дек 23 2023 г., 20:49
--- Версия сервера: 10.3.39-MariaDB
--- Версия PHP: 8.2.12
+-- Хост: 127.0.0.1
+-- Время создания: Дек 28 2023 г., 17:35
+-- Версия сервера: 10.4.28-MariaDB
+-- Версия PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -301,7 +301,9 @@ INSERT INTO `guruh` (`id`, `GuruhID`, `GuruhName`, `GuruhSumma`, `TecherID`, `Te
 (401, '1702995106', 'KAMRON HANGEL JUFT 20.00', '400000', 'NULL', '80000', '1', '2023-12-21', '2024-01-24', '12345680', 'NULL', '20:00-21:30', 'NULL', '20:00-21:30', 'NULL', '20:00-21:30', '1696835373', '2023-12-19 14:11:46', '2023-12-19 14:47:48'),
 (402, '1703219515', 'ILHOM A1 TOQ 09.30', '400000', '1689006666', '120000', '20000', '2023-12-25', '2024-01-27', '12345678', '09:30-11:00', 'NULL', '09:30-11:00', 'NULL', '09:30-11:00', 'NULL', '1689006176', '2023-12-22 04:31:55', '2023-12-23 09:27:42'),
 (403, '1703321940', 'BUNYOD A2 JUFT 14.00', '400000', '1689511264', '120000', '20000', '2023-12-25', '2024-01-27', '12345678', 'NULL', '14:00-15:30', 'NULL', '14:00-15:30', 'NULL', '14:00-15:30', '1689006176', '2023-12-23 08:59:00', '2023-12-23 09:03:31'),
-(404, '1703341962', 'ASILBEK A1 JUFT 18.00', '400000', 'NULL', '100000', '20000', '2023-12-28', '2024-01-30', '12345678', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', '1696835373', '2023-12-23 14:32:42', '2023-12-23 14:32:42');
+(404, '1703341962', 'ASILBEK A1 JUFT 18.00', '400000', 'NULL', '100000', '20000', '2023-12-28', '2024-01-30', '12345678', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', '1696835373', '2023-12-23 14:32:42', '2023-12-23 14:32:42'),
+(405, '1703780216', 'ASILBEK A1 JUFT 18.00 DAVOMI', '150000', 'NULL', '15', '15', '0015-12-15', '0005-12-15', '12345678', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', '1689004931', '2023-12-28 16:16:56', '2023-12-28 16:16:56'),
+(406, '1703781014', 'ASILBEK A1 JUFT 18.00 DAVOMI', '150000', 'NULL', '15', '15', '2023-12-28', '2023-12-30', '12345678', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', 'NULL', '18:30-20:00', '1689004931', '2023-12-28 16:30:14', '2023-12-28 16:30:14');
 
 -- --------------------------------------------------------
 
@@ -9452,6 +9454,26 @@ INSERT INTO `guruh_davomad` (`id`, `UserID`, `GuruhID`, `Date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `guruh_end`
+--
+
+CREATE TABLE `guruh_end` (
+  `id` int(11) NOT NULL,
+  `GuruhID` varchar(20) NOT NULL,
+  `NewGuruh` varchar(20) NOT NULL,
+  `Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `guruh_end`
+--
+
+INSERT INTO `guruh_end` (`id`, `GuruhID`, `NewGuruh`, `Status`) VALUES
+(2, '1703341962', '1703781014', 'true');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `guruh_plus`
 --
 
@@ -14608,7 +14630,9 @@ INSERT INTO `user_history` (`id`, `UserID`, `AdminID`, `Izoh`, `Data`) VALUES
 (1101, 'Chiqim', '1696835373', '100000 Naqt to`lov talabaga qaytarildi', '2023-12-23 14:40:04'),
 (1102, '1703343511', '1696835373', 'ARABOV OG`ABEK yangi talab qo`shildi', '2023-12-23 14:58:31'),
 (1103, '1703343511', '1696835373', 'Talaba guruhga qo\'shdi', '2023-12-23 14:59:06'),
-(1104, '1703346524', '1689004931', 'TEST UCHUN yangi talab qo`shildi', '2023-12-23 15:48:44');
+(1104, '1703346524', '1689004931', 'TEST UCHUN yangi talab qo`shildi', '2023-12-23 15:48:44'),
+(1105, '1703780216', '1689004931', 'Yangi guruh ochildi', '2023-12-28 16:16:56'),
+(1106, '1703781014', '1689004931', 'Yangi guruh ochildi', '2023-12-28 16:30:14');
 
 -- --------------------------------------------------------
 
@@ -23413,6 +23437,12 @@ ALTER TABLE `guruh_davomad`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `guruh_end`
+--
+ALTER TABLE `guruh_end`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `guruh_plus`
 --
 ALTER TABLE `guruh_plus`
@@ -23540,7 +23570,7 @@ ALTER TABLE `eslatma`
 -- AUTO_INCREMENT для таблицы `guruh`
 --
 ALTER TABLE `guruh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=405;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=407;
 
 --
 -- AUTO_INCREMENT для таблицы `guruh_chegirma`
@@ -23553,6 +23583,12 @@ ALTER TABLE `guruh_chegirma`
 --
 ALTER TABLE `guruh_davomad`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9652;
+
+--
+-- AUTO_INCREMENT для таблицы `guruh_end`
+--
+ALTER TABLE `guruh_end`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `guruh_plus`
@@ -23618,7 +23654,7 @@ ALTER TABLE `user_admin_tulov`
 -- AUTO_INCREMENT для таблицы `user_history`
 --
 ALTER TABLE `user_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1107;
 
 --
 -- AUTO_INCREMENT для таблицы `user_meneger`

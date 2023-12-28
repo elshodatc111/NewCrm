@@ -290,9 +290,22 @@
                 </div>
               </div>
             </div>
-            <!-- Guruhni davom ettirish -->
-            <a href="guruh_eye_new.php?GuruhID=<?php echo $_GET['GuruhID']; ?>"; class="btn btn-success w-100 text-center mt-2" style="border-radius:0;font-weight:700;">GURUHNI DAVOM ETISH</a>
+            <!-- Guruhdagi qarzdorlarga SMS xabar yuborish -->
             <a href="../config/sms/debit_sms.php?GuruhID=<?php echo $_GET['GuruhID']; ?>"; class="btn btn-success w-100 text-center mt-2" style="border-radius:0;font-weight:700;">QARZDORLARGA SMS</a>
+            <!-- Guruhni davom ettirish -->
+            <?php
+              $sqlnew = "SELECT * FROM `guruh_end` WHERE `GuruhID`='".$_GET['GuruhID']."' AND `Status`='true'";
+              $resnew = $conn->query($sqlnew);
+              $count = $resnew->fetchColumn();
+              if($count>0){
+                $sqlnew1 = "SELECT guruh.GuruhName,guruh_end.NewGuruh FROM `guruh_end` JOIN `guruh` ON guruh_end.NewGuruh=guruh.GuruhID WHERE guruh_end.GuruhID='".$_GET['GuruhID']."'";
+                $resnew1 = $conn->query($sqlnew1);
+                $rownew1 = $resnew1->fetch();
+                echo "<b class='mt-2'>Guruh davomi: </b><a href='guruh_eye.php?GuruhID=".$rownew1['NewGuruh']."'>".$rownew1['GuruhName']."</a>";
+              }else{
+            ?>
+            <a href="guruh_eye_new.php?GuruhID=<?php echo $_GET['GuruhID']; ?>"; class="btn btn-success w-100 text-center mt-2" style="border-radius:0;font-weight:700;">GURUHNI DAVOM ETISH</a>
+            <?php } ?>
           </div>
         </div>
         

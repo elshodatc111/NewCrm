@@ -35,7 +35,11 @@
             $stmt2->execute([$UserID, $Meneger,$text]);
             echo $text." Istoriya yozildi<br>";
         }
-        #Yangi guruh ochildi
+        #Yangi guruh ochilgandan kiyingi davomi
+        $sqlNew = "INSERT INTO `guruh_end`(`id`, `GuruhID`, `NewGuruh`, `Status`) VALUES (NULL,?,?,'true')";
+        $stmtNew= $conn->prepare($sqlNew);
+        $stmtNew->execute([$GuruhID,$NewGuruhID]);
+        #Yangi guruh ochish
         $sqlgp = "INSERT INTO `guruh`(`id`, `GuruhID`, `GuruhName`, `GuruhSumma`, `TecherID`, `TechTulov`, `TechBonus`, `Start`, `End`, `RoomID`, `Dushanba`, `Seshanba`, `Chorshanba`, `Payshanba`, `Juma`, `Shanba`, `Meneger`, `InsertData`, `UpdateData`)
         VALUES (NULL,?,?,?,'NULL',?,?,?,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
         $stmtgp= $conn->prepare($sqlgp);
