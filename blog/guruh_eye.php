@@ -242,7 +242,7 @@
                       <table class="table">
                         <tr><th>FIO</th><th>SMS yuborish</th></tr>
                         <?php
-                          $sqlSms = "SELECT guruh_plus.UserID, users.FIO FROM `guruh_plus` JOIN `users` ON guruh_plus.UserID=users.UserID WHERE guruh_plus.GuruhID='".$_GET['GuruhID']."'";
+                          $sqlSms = "SELECT guruh_plus.UserID, users.FIO FROM `guruh_plus` JOIN `users` ON guruh_plus.UserID=users.UserID WHERE guruh_plus.GuruhID='".$_GET['GuruhID']."' AND guruh_plus.Status='true'";
                           $resSms = $conn->query($sqlSms);
                           $i=0;
                           while ($rowSms = $resSms->fetch()) {

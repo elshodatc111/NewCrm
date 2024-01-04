@@ -39,18 +39,21 @@
             $row3 = $res3->fetch();
             
             $phone1 = str_replace(" ","",$row3['Phone']);
-            $phone = (string)substr($phone1,3);
-            array_push($Phones,$phone);
+            array_push($Phones,$phone1);
             $Text = $row3['FIO']." ATKO koreys tili o'quv markazi kurslaridan ".date("Y-m-d")." holatida ".number_format($qarz2, 0, '.', ' ')." so'm qarzdorligingiz mavjud. Sizdan mavjud qarzdorlikni so'ndirishni so'raymiz. (91) 950 1101";
             array_push($Tests,$Text);
             $i++;
         }
     }
-    for ($j=0; $j < $i; $j++) { 
-        echo $Phones[$j]."<br>";
-        echo $Tests[$j]."<br>";
-        sendMessege2($Tests[$j],$Phones[$j],$conn);
-    }
-    header("location: ../../blog/guruh_eye.php?GuruhID=".$_GET['GuruhID']."&send=true");
+    $LINK = "https://crm-atko.uz/blog/guruh_eye.php?GuruhID=".$_GET['GuruhID']."&send=true";
+    $query = [
+        'SendMesseg' => true,
+        'Url' => $LINK,
+        'Phone' => $Phones,
+        'Text' => $Tests
+    ];
+    print_r($query);
+    header('Location: https://atko.tech/sms/guruhDebetSend.php?' . http_build_query($query));
+    exit;
     
 ?>
