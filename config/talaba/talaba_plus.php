@@ -65,13 +65,18 @@
             include("../sms/sendMessehe.php");
             
             $phone1 = str_replace(" ","",$Phone);
-            $phone = substr($phone1,3);
             $Text = $FIO." ".date("Y")." yil ".date("M-d")." kunida ATKO koreys tili o'quv markazida o'qish uchun ro'yhatga olindi.\nMa'lumot uchun: (91) 950 1101";
-            sendMessege2($Text,$phone,$conn);
-            header("location: ../../tashriflar.php?teshrifplus=true");
+            $Url = "https://crm-atko.uz/tashriflar.php?teshrifplus=true";
+            $myLink = "https://atko.tech/sms/Send.php?SendMesseg=true&Url=".$Url."&Phone=".$phone1."&Text=".$Text;
+            $query = [
+                'SendMesseg' => true,
+                'Url' => $Url,
+                'Phone' => $phone1,
+                'Text' => $Text
+            ];
+            header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+            exit;
         }
-
-
     }else{
         header("location: ../../login.php");
     }

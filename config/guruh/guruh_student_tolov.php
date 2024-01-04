@@ -40,13 +40,20 @@
 
         $Phone = $rowP['Phone'];
         $phone1 = str_replace(" ","",$rowP['Phone']);
-        $phone = substr($phone1,3);
         $Text = $rowP['FIO']."\nHisobingizga ".$TulovSumma." so'm to'lov qabul qilindi. \nATKO koreys tili markazi\n(91) 950 1101";
-        include("../sms/sendMessehe.php");
-        sendMessege2($Text,$phone,$conn);
+        
         $checkID = time();
         $checkData = date("Y-m-d h:i:sa");
-        header("location: ../../blog/guruh_eye.php?GuruhID=".$_GET['GuruhID']."&talabatolovplus=true&checkData=".$checkData."&checkID=".$checkID."&pay=true&type=".$TulovType."&summa=".$TulovSumma."&UserID=".$UserID."&chegirma=0&izoh=".$TulovIzoh."");
+
+        $Url = "https://crm-atko.uz/blog/guruh_eye.php?GuruhID=".$_GET['GuruhID']."&talabatolovplus=true&checkData=".$checkData."&checkID=".$checkID."&pay=true&type=".$TulovType."&summa=".$TulovSumma."&UserID=".$UserID."&chegirma=0&izoh=".$TulovIzoh."";
+        $query = [
+            'SendMesseg' => true,
+            'Url' => $Url,
+            'Phone' => $phone1,
+            'Text' => $Text
+        ];
+        header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+        exit;
     }else{
         header("location: ../../login.php");
     }

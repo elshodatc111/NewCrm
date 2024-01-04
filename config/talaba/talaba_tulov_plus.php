@@ -56,10 +56,17 @@
                 $stmt3= $conn->prepare($sql3);
                 $stmt3->execute([$UserID, $tulovType,$summa,$izoh,$MenegerID]);
                 // Talabaga sms yuborish
-                include("../sms/sendMessehe.php");
                 $Text = $FIO." \nHisobingizga ".$summa." so'm to'lov qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101";
-                sendMessege2($Text,$phone,$conn);
-                header("location: ../../blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovplus=true");
+                $Url = "https://crm-atko.uz/blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovplus=true";
+                $query = [
+                    'SendMesseg' => true,
+                    'Url' => $Url,
+                    'Phone' => $phone1,
+                    'Text' => $Text
+                ];
+                header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+                exit;
+            
             }else{
                 $sqla11 = "SELECT * FROM `guruh` WHERE `GuruhID`='".$GuruhID."'";
                 $resa11 = $conn->query($sqla11);
@@ -82,10 +89,17 @@
                     $stmt3= $conn->prepare($sql3);
                     $stmt3->execute([$UserID, $tulovType,$summa,$izoh,$MenegerID]);
                     // Talabaga sms yuborish
-                    include("../sms/sendMessehe.php");
                     $Text = $FIO." \nHisobingizga ".$summa." so'm to'lov qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101";
-                    sendMessege2($Text,$phone,$conn);
-                    header("location: ../../blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovplus=true");
+                    
+                    $Url = "https://crm-atko.uz/blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovplus=true";
+                    $query = [
+                        'SendMesseg' => true,
+                        'Url' => $Url,
+                        'Phone' => $phone1,
+                        'Text' => $Text
+                    ];
+                    header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+                    exit;
                 }elseif($Chegirma>$MaxChegirma){
                     $Typing = "Guruhga_tulov";
                     // Talaba tarixiga yozish
@@ -99,10 +113,16 @@
                     $stmt3= $conn->prepare($sql3);
                     $stmt3->execute([$UserID, $tulovType,$summa,$izoh,$MenegerID]);
                     // Talabaga sms yuborish
-                    include("../sms/sendMessehe.php");
                     $Text = $FIO." \nHisobingizga ".$summa." so'm to'lov qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101";
-                    sendMessege2($Text,$phone,$conn);
-                    header("location: ../../blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovguruhchegirmakattaplus=true");
+                    $Url = "https://crm-atko.uz/blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovguruhchegirmakattaplus=true";
+                    $query = [
+                        'SendMesseg' => true,
+                        'Url' => $Url,
+                        'Phone' => $phone1,
+                        'Text' => $Text
+                    ];
+                    header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+                    exit;
                 }elseif($GuruhStart>=$days){
                     echo "ok";
                     $Typing = "Guruhga_tulov";
@@ -124,10 +144,16 @@
                         $stmt3= $conn->prepare($sql3);
                         $stmt3->execute([$UserID, $tulovType,$summa,$izoh,$MenegerID]);
                         // Talabaga sms yuborish
-                        include("../sms/sendMessehe.php");
                         $Text = $FIO." \nHisobingizga ".$summa." so'm to'lov qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101";
-                        sendMessege2($Text,$phone,$conn);
-                        header("location: ../../blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&chegirmaminus=true");
+                        $Url = "https://crm-atko.uz/blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&chegirmaminus=true";
+                        $query = [
+                            'SendMesseg' => true,
+                            'Url' => $Url,
+                            'Phone' => $phone1,
+                            'Text' => $Text
+                        ];
+                        header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+                        exit;
                     }else{
                         // Talaba tarixiga yozish
                         $sql2 = "INSERT INTO `user_student_history`(`id`, `UserID`, `GuruhID`, `Type`, `Status`, `Summa`, `Data`, `Meneger`)
@@ -148,10 +174,16 @@
                         $stmt322233= $conn->prepare($sql322233);
                         $stmt322233->execute([$UserID,$Chegirma,$izoh,$MenegerID]);
                         // Talabaga sms yuborish
-                        include("../sms/sendMessehe.php");
                         $Text = $FIO." \nHisobingizga ".$summa." so'm to'lov va ".$Chegirma." so'm chegirma qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101";
-                        sendMessege2($Text,$phone,$conn);
-                        header("location: ../../blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=".$Chegirma."&tulovchegirmaplus=true");
+                        $Url = "https://crm-atko.uz/blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=".$Chegirma."&tulovchegirmaplus=true";
+                        $query = [
+                            'SendMesseg' => true,
+                            'Url' => $Url,
+                            'Phone' => $phone1,
+                            'Text' => $Text
+                        ];
+                        header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+                        exit;
                     }
                 }else{
                     $Typing = "Guruhga_tulov";
@@ -166,10 +198,16 @@
                     $stmt3= $conn->prepare($sql3);
                     $stmt3->execute([$UserID, $tulovType,$summa,$izoh,$MenegerID]);
                     // Talabaga sms yuborish
-                    include("../sms/sendMessehe.php");
                     $Text = $FIO." \nHisobingizga ".$summa." so'm to'lov qabul qilindi. ATKO koreys tili markazi \n(91) 950 1101";
-                    sendMessege2($Text,$phone,$conn);
-                    header("location: ../../blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovguruhchegirmaplus=true");
+                    $Url = "https://crm-atko.uz/blog/tashrif_eye.php?UserID=".$UserID."&pay=true&checkID=".$checkID."&checkData=".$checkData."&type=".$tulovType."&summa=".$summa."&chegirma=0&tulovguruhchegirmaplus=true";
+                    $query = [
+                        'SendMesseg' => true,
+                        'Url' => $Url,
+                        'Phone' => $phone1,
+                        'Text' => $Text
+                    ];
+                    header('Location: https://atko.tech/sms/Send.php?' . http_build_query($query));
+                    exit;
                 }
             }
             echo "ddd";
