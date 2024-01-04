@@ -54,6 +54,9 @@
             <div class="info-box card px-3">
                 <h5 class="card-title w-100 text-center pb-0 mb-1">Guruhlar</h5>
                 <div class="table-responsive">
+                  <?php
+                    $datess = date('Y-m-d',strtotime(' -35 days'));
+                  ?>
                   <table  class="table table-bordered text-center align-baseline table-striped" id="dataTable" width="100%" cellspacing="0" style="font-size:14px;">
                       <thead>
                         <tr class='align-middle'>
@@ -69,7 +72,7 @@
                       </thead>
                       <tbody>
                         <?php
-                          $sql = "SELECT * FROM `guruh` ORDER BY `Start` DESC";
+                          $sql = "SELECT * FROM `guruh` WHERE `End`>'".$datess."' ORDER BY `Start` DESC";
                           $res = $conn->query($sql);
                           $i=1;
                           while($row = $res->fetch()){

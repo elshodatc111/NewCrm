@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php 
-    date_default_timezone_set("Asia/Samarkand");
-?>
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -52,14 +47,12 @@
     }
     </script>
 </head>
-
 <body>
   <?php  
     include("../connect/top2.php"); 
     $guruh = "student";
     include("../connect/menu2.php");
   ?>
-  
   <main id="main" class="main">
     <?php
       $sql = "SELECT * FROM `users` JOIN `user_student` ON users.UserID=user_student.UserID WHERE users.UserID='".$_GET['UserID']."'";
@@ -94,7 +87,6 @@
         $guruhdellll = $guruhdellll + $rowss['GuruhSumma'];
       }
       $Balans = $Chegirma+$NaqtPastik-$Qaytarildi-$guruhSumma-$guruhdellll;
-
       $sqlDay = "SELECT * FROM `guruh_chegirma` WHERE `id`=1";
       $resDay = $conn->query($sqlDay);
       $rowDay = $resDay->fetch();
@@ -288,16 +280,21 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form action="./tashrif_eye.php?UserID=<?php echo $_GET['UserID']; ?>&phone=<?php echo $row['Phone']; ?>" method="post">
+                        <?php
+                          $phone = str_replace(" ","",$row['Phone']);
+                        ?>
+                        <form action="https://atko.tech/sms/Send.php?" method="GET">
                           <div class="row mb-3">
+                            <input type="hidden" name="Url" value="https://crm-atko.uz/blog/tashrif_eye.php?UserID=<?php echo $_GET['UserID'];?>">
+                            <input type="hidden" name="Phone" value="<?php echo $phone; ?>">
                             <label for="inputPassword" class="col-sm-12 col-form-label">SMS matni</label>
                             <div class="col-sm-12">
-                              <textarea class="form-control" onclick="onbutton('sendSMS');" name="text" style="height: 100px;border-radius:0;" required></textarea>
+                              <textarea class="form-control" onclick="onbutton('sendSMS');" name="Text" style="height: 100px;border-radius:0;" required></textarea>
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-sm-12">
-                              <button type="submit" id="sendSMS" onclick="button('sendSMS');" name="sendmessge" class="btn btn-primary w-100" style="border-radius:0;">SMS yuborish</button>
+                              <button type="submit" id="sendSMS" onclick="button('sendSMS');" name="SendMesseg" class="btn btn-primary w-100" style="border-radius:0;">SMS yuborish</button>
                             </div>
                           </div>
                         </form>
@@ -305,16 +302,6 @@
                     </div>
                   </div>
                 </div>
-                <?php
-                  include("../config/sms/sendMessehe.php");
-                  if(isset($_POST['sendmessge'])){
-                    $phone1 = str_replace(" ","",$_GET['phone']);
-                    $phone =  substr($phone1,3);
-                    if(sendMessege2($_POST['text'],$phone,$conn)){
-                      echo "<p>SMS yuborildi</p>";
-                    }
-                  }
-                ?>
                 <!-- Eslatma qoldirish -->  
                 <button class="btn btn-warning w-100 my-1 px-0 text-white" style="border-radius:0;" data-bs-toggle="modal" data-bs-target="#eslatmaqoldirish">ESLATMA QOLDIRISH</button>  
                 <div class="modal fade" id="eslatmaqoldirish" tabindex="-1">
