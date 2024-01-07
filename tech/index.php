@@ -104,7 +104,8 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $sql = "SELECT * FROM `guruh` WHERE `TecherID`='".$_COOKIE['UserIDs']."'";
+                                            $date01 = date('Y-m-d',strtotime('-5 day'));
+                                            $sql = "SELECT * FROM `guruh` WHERE `TecherID`='".$_COOKIE['UserIDs']."' AND `End`>='".$date01."'";
                                             $res = $conn->query($sql);
                                             $i=1;
                                             while ($row=$res->fetch()) {
