@@ -405,8 +405,10 @@
                   $resa = $conn->query($sqla);
                   $i=1;
                   while($rowa = $resa->fetch()){
+                    // Guruhga qo'shildi
                     $resa1 = $conn->query("SELECT * FROM `users` WHERE `UserID`='".$rowa['StartMenegerID']."'");
                     $rowa1 = $resa1->fetch();
+                    // Talaba to'lovlari
                     $UserTalaba = $rowa['UserID'];
                     $sqltul = "SELECT * FROM `user_student_tulov` WHERE `UserID`='".$UserTalaba."'";
                     $restul = $conn->query($sqltul);
@@ -418,11 +420,13 @@
                         $TalTul = $TalTul + $rowtul['TulovSumma'];
                       }
                     }
-                    $sqlaaa = "SELECT * FROM `guruh_plus` JOIN `guruh_user_del` ON guruh_plus.GuruhID=guruh_user_del.GuruhID WHERE `Status`='false' AND guruh_plus.UserID='".$UserTalaba."'";
+                    // Jarimalar
+                    $sqlaaa = "SELECT * FROM `guruh_user_del` WHERE guruh_user_del.UserID='".$UserTalaba."'";
                     $resaaa = $conn->query($sqlaaa);
                     while ($rowaaa = $resaaa->fetch()) {
                       $TalTul = $TalTul - $rowaaa['GuruhSumma'];
                     }
+                    // Guruhlar
                     $sqlba = "SELECT * FROM `guruh_plus` JOIN `guruh` ON guruh_plus.GuruhID=guruh.GuruhID WHERE guruh_plus.Status='true' AND guruh_plus.UserID='".$UserTalaba."'";
                     $resba = $conn->query($sqlba);
                     while ($rowtalaba=$resba->fetch()) {
