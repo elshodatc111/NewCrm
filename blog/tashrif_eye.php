@@ -527,22 +527,22 @@
                 while ($rowax = $resax->fetch()) {
                   if($rowax['Type']==='Guruhga_qoshildi'){
                     $Balans = $Balans - $rowax['Summa'];
-                    $Typing = "Guruhga qo'shildi";
+                    $Typing = "<b style='color:#0DCAF0;'>Guruhga qo'shildi</b>";
                   }elseif($rowax['Type']==='Guruhga_tulov'){
                     $Balans = $Balans + $rowax['Summa'];
-                    $Typing = "To'lov";
+                    $Typing = "<b style='color:#198754;'>To'lov</b>";
                   }elseif($rowax['Type']==='Tulov_Qaytarildi'){
                     $Balans = $Balans - $rowax['Summa'];
-                    $Typing = "To'lov qaytarildi";
+                    $Typing = "<b style='color:#F02A2A'>To'lov qaytarildi</b>";
                   }elseif($rowax['Type']==='Guruh_talabaga'){
                     $Balans = $Balans + $rowax['Summa'];
-                    $Typing = "Guruhdan o`chirildi";
+                    $Typing = "<b style='color:#FF0800'>Guruhdan o`chirildi</b>";
                   }elseif($rowax['Type']==='Guruhga_jarima'){
                     $Balans = $Balans - $rowax['Summa'];
-                    $Typing = "Jarima";
+                    $Typing = "<b style='color:#FF0800'>Jarima</b>";
                   }elseif($rowax['Type']==='Guruhga_Chegirma'){
                     $Balans = $Balans + $rowax['Summa'];
-                    $Typing = "Chegirma";
+                    $Typing = "<b style='color:#FFC107'>Chegirma</b>";
                   }
                   $Meneger = $rowax['Meneger'];
                   array_push($vaqtlar,$rowax['Data']);

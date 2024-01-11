@@ -19,7 +19,6 @@
   <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -220,9 +219,18 @@
                                 $resDu2 = $conn->query($sqlDu2);
                                 while($rowDu2 = $resDu2->fetch()){
                                   if($rowDu2['Start']<= $date){
-                                    echo "<button class='btn btn-outline-success' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowDu2['GuruhName']." >AKTIV</button>";
-                                  }else{echo "<button class='btn btn-outline-primary' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowDu2['GuruhName']." >YANGI</button>";}}
-                              }else{echo "<button class='btn btn-outline-danger' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
+                                    echo "<button 
+                                      class='btn btn-outline-success' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowDu2['GuruhName']." >AKTIV</button>";
+                                  }else{echo "<button 
+                                      class='btn btn-outline-primary' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowDu2['GuruhName']." >YANGI</button>";}}
+                              }else{echo "<button 
+                                class='btn btn-outline-danger' 
+                                style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
                               #Seshanba
                               echo "<td>";$sqlSE = "SELECT COUNT(*) FROM guruh WHERE `RoomID`='".$row['RoomID']."' AND `Seshanba`='".$value."' AND `END`>'".$date."'";
                               $resSE = $conn->query($sqlSE);
@@ -232,12 +240,19 @@
                                   $resSE2 = $conn->query($sqlSE2);
                                   while($rowSE2 = $resSE2->fetch()){
                                   if($rowSE2['Start']<= $date){
-                                      echo "<button class='btn btn-outline-success' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowSE2['GuruhName']." >AKTIV</button>";
+                                      echo "<button class='btn btn-outline-success' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowSE2['GuruhName']." >AKTIV</button>";
                                   }else{
-                                    echo "<button class='btn btn-outline-primary' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowSE2['GuruhName']." >YANGI</button>";
+                                    echo "<button class='btn btn-outline-primary' 
+                                    style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                    title=".$rowSE2['GuruhName']." >YANGI</button>";
                                   }
                                 }
-                              }else{echo "<button class='btn btn-outline-danger' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
+                              }else{echo "<button 
+                                class='btn btn-outline-danger' 
+                                style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
                               #Chorshanba
                               echo "<td>";$sqlCHor = "SELECT COUNT(*) FROM guruh WHERE `RoomID`='".$row['RoomID']."' AND `Chorshanba`='".$value."' AND `END`>'".$date."'";
                               $resCHor = $conn->query($sqlCHor);
@@ -247,12 +262,18 @@
                                   $reschor = $conn->query($sqlchor);
                                   while($rowchor = $reschor->fetch()){
                                   if($rowchor['Start']<= $date){
-                                      echo "<button class='btn btn-outline-success' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowchor['GuruhName']." >AKTIV</button>";
+                                      echo "<button class='btn btn-outline-success' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowchor['GuruhName']." >AKTIV</button>";
                                   }else{
-                                    echo "<button class='btn btn-outline-primary' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowchor['GuruhName']." >YANGI</button>";
+                                    echo "<button class='btn btn-outline-primary' 
+                                    style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                    title=".$rowchor['GuruhName']." >YANGI</button>";
                                   }
                                 }
-                              }else{echo "<button class='btn btn-outline-danger' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
+                              }else{echo "<button class='btn btn-outline-danger' 
+                                style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
                               #Payshanba
                               echo "<td>";$sqlPa = "SELECT COUNT(*) FROM guruh WHERE `RoomID`='".$row['RoomID']."' AND `Payshanba`='".$value."' AND `END`>'".$date."'";
                               $resPa = $conn->query($sqlPa);
@@ -262,9 +283,15 @@
                                   $resPa2 = $conn->query($sqlPa2);
                                   while($rowPa2 = $resPa2->fetch()){
                                   if($rowPa2['Start']<= $date){
-                                      echo "<button class='btn btn-outline-success' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowPa2['GuruhName']." >AKTIV</button>";
-                                  }else{echo "<button class='btn btn-outline-primary' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowPa2['GuruhName']." >YANGI</button>";}}
-                              }else{echo "<button class='btn btn-outline-danger' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
+                                      echo "<button class='btn btn-outline-success' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowPa2['GuruhName']." >AKTIV</button>";
+                                  }else{echo "<button class='btn btn-outline-primary' 
+                                    style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                    title=".$rowPa2['GuruhName']." >YANGI</button>";}}
+                              }else{echo "<button class='btn btn-outline-danger' 
+                                style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
                               #Juma
                               echo "<td>";$sqlJu = "SELECT COUNT(*) FROM guruh WHERE `RoomID`='".$row['RoomID']."' AND `Juma`='".$value."' AND `END`>'".$date."'";
                               $resJu = $conn->query($sqlJu);
@@ -274,9 +301,15 @@
                                   $resJu2 = $conn->query($sqlJu2);
                                   while($rowJu2 = $resJu2->fetch()){
                                   if($rowJu2['Start']<= $date){
-                                      echo "<button class='btn btn-outline-success' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowJu2['GuruhName']." >AKTIV</button>";
-                                  }else{echo "<button class='btn btn-outline-primary' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowJu2['GuruhName']." >YANGI</button>";}}
-                              }else{echo "<button class='btn btn-outline-danger' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
+                                      echo "<button class='btn btn-outline-success' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowJu2['GuruhName']." >AKTIV</button>";
+                                  }else{echo "<button class='btn btn-outline-primary' 
+                                    style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                    title=".$rowJu2['GuruhName']." >YANGI</button>";}}
+                              }else{echo "<button class='btn btn-outline-danger' 
+                                style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
                               #Shanba
                               echo "<td>";$sqlShab = "SELECT COUNT(*) FROM guruh WHERE `RoomID`='".$row['RoomID']."' AND `Shanba`='".$value."' AND `END`>'".$date."'";
                               $resShan = $conn->query($sqlShab);
@@ -286,13 +319,15 @@
                                   $resShan2 = $conn->query($sqlShan2);
                                   while($rowShan22 = $resShan2->fetch()){
                                   if($rowShan22['Start']<= $date){
-                                      echo "<button class='btn btn-outline-success' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowShan22['GuruhName']." >AKTIV</button>";
-                                  }else{echo "<button class='btn btn-outline-primary' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title=".$rowShan22['GuruhName']." >YANGI</button>";}}
-                              }else{echo "<button class='btn btn-outline-danger' style='padding:1px 2px;border-radius:0;margin:0 2px;' data-bs-toggle='tooltip' data-bs-placement='top' title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
-
-
-
-
+                                      echo "<button class='btn btn-outline-success' 
+                                      style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                      title=".$rowShan22['GuruhName']." >AKTIV</button>";
+                                  }else{echo "<button class='btn btn-outline-primary' 
+                                    style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                    title=".$rowShan22['GuruhName']." >YANGI</button>";}}
+                              }else{echo "<button class='btn btn-outline-danger' 
+                                style='padding:1px 2px;border-radius:0;margin:0 2px;' 
+                                title='Dars qo`yilmagan' >BO`SH</button>";}echo "</td>";
                               echo "</tr>";  
                             }
                         ?>
@@ -317,12 +352,9 @@
   <script src="assets/vendor/chart.js/chart.umd.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
   <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
-    <script src="assets/js/jquery.inputmask.min.js"></script>
-    <script src="./assets/dselect.js"></script>
-    <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
